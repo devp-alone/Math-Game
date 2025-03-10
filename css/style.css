@@ -1,0 +1,196 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background: radial-gradient(circle, #fff, #ccc);
+    border: 2px solid red; */
+    
+    background-image: url(https://media-hosting.imagekit.io//5c0382c31188411f/imgg.gif?Expires=1836231865&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=i0k4UT-XAF4TGUk9ppjojSrJ2tZUQXYofbomZq06OVO-6FBWnjXX6FPO-Dt8peZLFLIaLZf8i6HQLIGtWYtg99uFmGB7TPGOFWkmSbggQDDJXmCP2veuqrIpVsWzC3MyBoD2HKe-tLeTOmz9nHE4lJNY5w-G3TeCl8wG2UEmyJnFSF6r2mSUJ75uPAykqxPeoW7zNUB-OOczpris7-qqwMYFyj7YDbItGb~yAsjLsp9--peF3VwKtzzdiGaBE732c-Bz54ADpniwMN5rr938fV8TCOCR57BaSLK~8AuCPnI9WnRLwdO1uNESkIJKzhWHz39WjwFg4WwMyGnfcjtjPw__);
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+#container {
+    width: 90%;
+    max-width: 550px;
+    height: auto;
+    background-color: #8ed0ee;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 0px 0px #009de4;
+    position: relative;
+    text-align: center;
+}
+
+/* Score Box */
+#score {
+    background-color: #f1ff92;
+    color: #888e5f;
+    padding: 10px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 16px;
+    box-shadow: 0px 4px 0px 0px #9da853;
+}
+
+/* Correct & Wrong */
+#correct, #wrong {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px;
+    color: white;
+    font-size: 16px;
+    display: none;
+}
+
+#correct {
+    background-color: #42e252;
+}
+
+#wrong {
+    background-color: #de401e;
+}
+
+/* Question Box */
+#question {
+    width: 90%;
+    max-width: 450px;
+    height: 150px;
+    background-color: #9da0ea;
+    margin: 30px auto;
+    font-size: 4vw;
+    text-align: center;
+    font-family: 'Lucida Sans', sans-serif;
+    box-shadow: 0px 4px 0px 0px #535aa8;
+}
+
+/* Instructions */
+#instruction {
+    width: 90%;
+    max-width: 450px;
+    height: 50px;
+    background-color: #8481d9;
+    margin: 10px auto;
+    text-align: center;
+    line-height: 40px;
+    box-shadow: 0px 4px 0px 0px #8153a8;
+}
+
+/* Choices */
+#choice {
+    width: 90%;
+    max-width: 450px;
+    height: auto;
+    margin: 5px auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* Answer Boxes */
+.box {
+    width: 22%;
+    height: 85px;
+    background-color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    line-height: 80px;
+    font-size: 2vw;
+    transition: all .2s;
+}
+
+/* Start/Reset Button */
+#startreset {
+    width: 120px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, .5);
+    margin: 10px auto;
+    border-radius: 3px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 18px;
+    box-shadow: 0px 4px 0px 0px rgba(0,0,0,.2);
+}
+
+/* Timer */
+#timeremaining {
+    width: 160px;
+    background-color: rgba(181, 235, 36, .8);
+    padding: 10px;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    border-radius: 3px;
+    box-shadow: 0px 4px 0px 0px rgba(0,0,0,.2);
+    display: none;
+}
+
+/* Game Over */
+#gameover {
+    width: 90%;
+    max-width: 500px;
+    height: 200px;
+    background: linear-gradient(#f3ca6b, #f3706c);
+    color: white;
+    text-align: center;
+    font-size: 3vw;
+    text-transform: uppercase;
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    display: none;
+}
+
+/* Hover and Active States */
+.box:hover, #startreset:hover {
+    background-color: #9c89f6;
+    box-shadow: 0px 4px 0px 0px rgba(0,0,0,.5);
+}
+
+.box:active, #startreset:active {
+    top: 2px;
+    box-shadow: 0px 4px 0px 0px rgba(0,0,0,.5);
+}
+
+/* Media Queries for Small Screens */
+@media screen and (max-width: 600px) {
+    #container {
+        width: 95%;
+        padding: 15px;
+    }
+
+    #question {
+        font-size: 5vw;
+    }
+
+    .box {
+        margin-top: 1rem;
+        width: 45%;
+        height: 70px;
+        font-size: 4vw;
+        line-height: 70px;
+    }
+
+    #gameover {
+        font-size: 4vw;
+    }
+
+    #timeremaining, #score {
+        font-size: 14px;
+    }
+}
