@@ -82,7 +82,7 @@ function showCountDown(){
 
 
 
-            }, 2000);
+            }, 4000);
         
             
         }
